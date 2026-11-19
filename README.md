@@ -1,56 +1,64 @@
-# Welcome to your Expo app 👋
+# bookStore
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile book catalog app built with Expo and React Native. Browse a list of books, add new entries, edit book details, and delete entries.
 
-## Get started
+## Features
 
-1. Install dependencies
+- View books with their title, author, cover image, and price
+- Add, edit, and delete books
+- Load and save book data through a REST API
+- Run the app on iOS, Android, and web
 
-   ```bash
-   npm install
-   ```
+## Tech stack
 
-2. Start the app
+- [Expo](https://expo.dev/) and [React Native](https://reactnative.dev/)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
+- TypeScript
+- [Axios](https://axios-http.com/) for API requests
 
-   ```bash
-   npx expo start
-   ```
+## Getting started
 
-In the output, you'll find options to open the app in a
+### Requirements
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js and npm
+- Expo Go or an iOS/Android simulator for mobile development
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Install and run
 
 ```bash
-npm run reset-project
+npm ci
+npm start
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Once Expo starts, follow the terminal instructions to open the app on a device or simulator. You can also use these commands to start a platform directly:
 
-### Other setup steps
+```bash
+npm run android
+npm run ios
+npm run web
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Project structure
 
-## Learn more
+```text
+app/                 Expo Router entry point
+src/
+  api/               Book API requests
+  components/        Reusable UI components
+  screens/           Home and add/edit book screens
+assets/              App icons and images
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Book data
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+The app currently uses a MockAPI endpoint configured in `src/api/http.ts`. The endpoint is shared by this project, so changes made through the app affect that API's data. To use your own backend, update the endpoint in that file.
 
-## Join the community
+## Available scripts
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+| Command | Description |
+| --- | --- |
+| `npm start` | Start the Expo development server |
+| `npm run android` | Start the app for Android |
+| `npm run ios` | Start the app for iOS |
+| `npm run web` | Start the app for web |
+| `npm run lint` | Run Expo lint checks |
